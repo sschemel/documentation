@@ -86,8 +86,9 @@ found *[*here*](https://support.signalfx.com/hc/en-us/articles/205147119)
 *If you get a message like the following collectd hasn’t
 installed: -bash: collectd: command not found*
 
-****Step Two: Configure collectd to send metrics to SignalFx\
-****Now that collectd is installed we need to configure it to collect
+***Step Two: Configure collectd to send metrics to SignalFx***
+
+Now that collectd is installed we need to configure it to collect
 and send metrics to SignalFx. To automatically configure collectd with a
 base configuration and to send metrics to SignalFx follow the
 instructions below. To manually configure collectd please see these
@@ -121,7 +122,7 @@ or
 3\. Next you will be asked to input the hostname value. \
 Type the 'hostname' and press enter
 
-****Step Three: View Metrics in SignalFx****
+***Step Three: View Metrics in SignalFx***
 
 We have pre-built a handful of discovery dashboards for you to explore
 and discover your metrics. Our recommended place to start is in the

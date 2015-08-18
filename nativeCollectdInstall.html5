@@ -32,8 +32,8 @@
 <p>5. Check that collectd has installed</p>
 <p><pre><code>collectd -h</code></pre>
 <p><em>If you get a message like the following collectd hasn’t installed: -bash: collectd: command not found</em></p>
-<p>****Step Two: Configure collectd to send metrics to SignalFx<br />
-****Now that collectd is installed we need to configure it to collect and send metrics to SignalFx. To automatically configure collectd with a base configuration and to send metrics to SignalFx follow the instructions below. To manually configure collectd please see these instructions</p>
+<p><strong><em>Step Two: Configure collectd to send metrics to SignalFx</em></strong></p>
+<p>Now that collectd is installed we need to configure it to collect and send metrics to SignalFx. To automatically configure collectd with a base configuration and to send metrics to SignalFx follow the instructions below. To manually configure collectd please see these instructions</p>
 <p>1. To do this you need to run the following curl command:</p>
 <p><pre><code>curl -sSL https://dl.signalfx.com/collectd-simple | bash -s -- -t API\_TOKEN</code></pre>
 <p><em>*to find your org API Token go to </em><a href="https://app.signalfx.com/#/myprofile"><em>https://app.signalfx.com/#/myprofile</em></a> </p>
@@ -48,5 +48,5 @@
 <em>*options 'dns' and 'aws' are not relevant in this tutorial </em></p>
 <p>3. Next you will be asked to input the hostname value. <br />
 Type the 'hostname' and press enter</p>
-<p>****Step Three: View Metrics in SignalFx****</p>
+<p><strong><em>Step Three: View Metrics in SignalFx</em></strong></p>
 <p>We have pre-built a handful of discovery dashboards for you to explore and discover your metrics. Our recommended place to start is in the Catalog which you can get to here <a href="https://app.signalfx.com/#/catalog/?selectedKeyValue=sf_key:host" class="uri">https://app.signalfx.com/#/catalog/?selectedKeyValue=sf_key:host</a></p>

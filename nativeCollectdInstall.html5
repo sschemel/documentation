@@ -9,9 +9,7 @@
 <p><em>*If this command returns something like: ‘/bin/dpkg’ it’s a safe bet you are on a debian based version of linux</em></p>
 <p>2. Update local repository</p>
 <p><pre><code>sudo apt-get update</code></pre>
-<ol type="1">
-<li>Install collectd </li>
-</ol>
+<p>3. Install collectd </p>
 <p><pre><code>sudo apt-get install collectd</code></pre>
 <p>4. Check that collectd has installed</p>
 <p><pre><code>collectd -h</code></pre>

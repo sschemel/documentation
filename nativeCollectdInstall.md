@@ -30,7 +30,7 @@ you are on a debian based version of linux*
 
 ```sudo apt-get update```
 
-1. Install collectd 
+3\. Install collectd 
 
 ```sudo apt-get install collectd```
 

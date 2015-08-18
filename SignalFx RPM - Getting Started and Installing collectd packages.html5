@@ -1,0 +1,85 @@
+<p><strong>Who should follow this documentation?</strong></p>
+<p>If you are new to SignalFx, new to collectd, or new to reporting infrastructure metrics follow this guide.</p>
+<p><strong>What is the end goal?</strong><br />
+At the end you will have:<br />
+1. Downloaded and installed SingalFx's build of collectd<br />
+2. Configured collectd to send a baseline of infrastructure metrics to SignalFx.<br />
+3. Viewed the metrics being sent to SignalFx in your organization's Host page.</p>
+<p><strong>Which Operating Systems are supported?</strong><br />
+Ubuntu 12.04, 14.04 &amp; 15.04<br />
+RHEL/Centos 5.x, 6.x &amp; 7.x<br />
+Amazon Linux 2014.09 &amp; 2015.03</p>
+<p><strong>Ubuntu 12.04, 14.04 &amp; 15.04</strong><br />
+ 1. Update apt-get</p>
+<p><pre><code>sudo apt-get update</code></pre>
+<p>2. Install required package for obtaining SignalFx collectd Packages<br />
+<strong>For ubuntu versions &gt; 13.10</strong><br />
+install software-properties-common source package to get SignalFx collectd package</p>
+<p><pre><code>sudo apt-get install software-properties-common</code></pre>
+<p><strong>For unbuntu versions &lt; 13.10</strong><br />
+install python-software-properties source package to get SignalFx collectd package</p>
+<p><pre><code>sudo apt-get install python-software-properties</code></pre>
+<p>3. Get the SignalFx collectd package</p>
+<p><pre><code>sudo add-apt-repository ppa:signalfx/collectd-release</code></pre>
+<p>4. Update apt-get to reference new SignalFx package</p>
+<p><pre><code>sudo apt-get update</code></pre>
+<p>5. Install collectd and additional plugins</p>
+<p><pre><code>sudo apt-get install collectd</code></pre>
+<p>6. Configure collectd to send metrics to SignalFx<br />
+With a known API_Token (API token can be found here: https://app.signalfx.com/#/myprofile)</p>
+<p><pre><code>curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s -- -t \$api\_token</code></pre>
+<p>or<br />
+With user credentials. (You will be promoted for username and password.)</p>
+<p><pre><code>curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --</code></pre>
+<p>7. You will be asked how you want to configure your hostname. Type 'input' and press enter<br />
+*options 'dns' and 'aws' are not applicable to this tutorial</p>
+<p>8. Next you will be asked to input the hostname value. Type the 'hostname' and press enter</p>
+<p>9. You can now view your metrics in SignalFx. We recommend you start with viewing them here under your host page: <a href="https://app.signalfx.com/#/catalog/?selectedKeyValue=sf_key:host" class="uri">https://app.signalfx.com/#/catalog/?selectedKeyValue=sf_key:host</a></p>
+<p><strong>RHEL/CentOS 6 &amp; 7, Amazon Linux 2014.09, Amazon Linux 2015.03</strong><br />
+1. Update wget</p>
+<p><pre><code>sudo yum install wget</code></pre>
+<p>2. Download SignalFx RPM<br />
+Link to list of current RPMs <a href="https://support.signalfx.com/hc/en-us/articles/205066479" class="uri">https://support.signalfx.com/hc/en-us/articles/205066479</a></p>
+<p><pre><code>wget \~Link to SignalFX RPMs\~</code></pre>
+<p>Example:</p>
+<p><pre><code>wget https://dl.signalfx.com/rpms/SignalFx-rpms/release/SignalFx-RPMs-centos-7-release-1.0-0.noarch.rpm</code></pre>
+<p>3. Install SignalFx RPM</p>
+<p><pre><code>sudo yum install \~RPM Name\~</code></pre>
+<p>Example:</p>
+<p><pre><code>sudo yum install SignalFx-RPMs-centos-7-release-1.0-0.noarch.rpm</code></pre>
+<p>4. Install collectd and needed base plugins</p>
+<p><pre><code>sudo yum install collectd collectd-disk collectd-write\_http</code></pre>
+<p>5. Configure collectd to send metrics to SignalFx<br />
+With a known api token (API token can be found here: https://app.signalfx.com/#/myprofile)</p>
+<p><pre><code>curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s -- -t \$api\_token</code></pre>
+<p>or<br />
+With user credentials. (You will be promoted for username and password)</p>
+<p><pre><code>curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --</code></pre>
+<p>6. You will be asked how you want to configure your hostname. Type 'input' and press enter<br />
+*options 'dns' and 'aws' are not applicable to this tutorial</p>
+<p>7. Next you will be asked to input the hostname value. Type the 'hostname' and press enter</p>
+<p>8. You can now view your metrics in SignalFx. We recommend you start with viewing them here under your host page: <a href="https://app.signalfx.com/#/catalog/?selectedKeyValue=sf_key:host" class="uri">https://app.signalfx.com/#/catalog/?selectedKeyValue=sf_key:host</a></p>
+<p><strong>RHEL/CentOS 5</strong><br />
+1. Install python-simplejson</p>
+<p><pre><code>sudo yum install python-simplejson</code></pre>
+<p>2. Update openssl</p>
+<p><pre><code>sudo yum update openssl</code></pre>
+<p>3. Install wget</p>
+<p><pre><code>sudo yum install wget</code></pre>
+<p>4. Download SignalFx RPM<br />
+Link to list of current RPMs <a href="https://support.signalfx.com/hc/en-us/articles/205066479" class="uri">https://support.signalfx.com/hc/en-us/articles/205066479</a></p>
+<p><pre><code>wget SignalFx\_Centos\_5\_RPM\_Location</code></pre>
+<p>Example:</p>
+<p><pre><code>wget https://s3.amazonaws.com/public-downloads--signalfuse-com/rpms/SignalFx-rpms/release/SignalFx-RPMs-centos-5-release-1.0-0.noarch.rpm</code></pre>
+<p>5. Install SignalFx RPM</p>
+<p><pre><code>sudo yum install --nogpgcheck SignalFx\_Centos\_5\_RPM\_Filename</code></pre>
+<p>Example:</p>
+<p><pre><code>sudo yum install --nogpgcheck SignalFx-RPMs-centos-5-release-1.0-0.noarch.rpm</code></pre>
+<p>6. Install collectd and baseplugins</p>
+<p><pre><code>sudo yum install collectd collectd-disk collectd-write\_http</code></pre>
+<p>7. Configure collectd with a known api token (API token can be found here: https://app.signalfx.com/#/myprofile)</p>
+<p><pre><code>curl https://s3.amazonaws.com/public-downloads--signalfuse-com/collectd-simple | sudo bash -s -- -t \$api\_token</code></pre>
+<p>7. You will be asked how you want to configure your hostname. Type 'input' and press enter<br />
+*options 'dns' and 'aws' are not applicable to this tutorial</p>
+<p>8. Next you will be asked to input the hostname value. Type the 'hostname' and press enter</p>
+<p>9. You can now view your metrics in SignalFx. We recommend you start with viewing them here under your host page: <a href="https://app.signalfx.com/#/catalog/?selectedKeyValue=sf_key:host" class="uri">https://app.signalfx.com/#/catalog/?selectedKeyValue=sf_key:host</a></p>

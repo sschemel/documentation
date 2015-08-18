@@ -77,7 +77,7 @@ found *[*here*](https://support.signalfx.com/hc/en-us/articles/205147119)
 
 4\. Install baseline collectd plugins
 
-```sudo yum install collectd-disk collectd-write\_http```
+```sudo yum install collectd-disk collectd-write_http```
 
 5\. Check that collectd has installed
 
@@ -97,7 +97,7 @@ instructions
 1\. To do this you need to run the following curl command:
 
 ```curl -sSL https://dl.signalfx.com/collectd-simple | bash -s -- -t
-API\_TOKEN```
+API_TOKEN```
 
 *\*to find your org API Token go
 to *[*https://app.signalfx.com/\#/myprofile*](https://app.signalfx.com/#/myprofile) 
@@ -109,7 +109,7 @@ or
 example:
 
 ```curl -sSL https://dl.signalfx.com/collectd-simple | bash -s --
--t abc\_123\_efg```
+-t abc_123_efg```
 
 or
 

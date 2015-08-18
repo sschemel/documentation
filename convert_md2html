@@ -11,9 +11,9 @@ HTML_text=$(<temp_html)
 
 #printf "$HTML_text"
 
-#curl https://signalfx.zendesk.com/api/v2/help_center/articles/$article_number.json \
-#  -d '{"article": {"promoted": false, "position": 0, "comments_disabled": false, "body": "$HTML_text"}}' \
-#  -v -u straten@signalfx.com -X PUT -H "Content-Type: application/json"
+curl https://signalfx.zendesk.com/api/v2/help_center/articles/$article_number.json \
+  -d '{"article": {"promoted": false, "position": 0, "comments_disabled": false, "body": "$HTML_text"}}' \
+  -v -u straten@signalfx.com -X PUT -H "Content-Type: application/json"
 
 rm temp_html
 

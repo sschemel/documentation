@@ -1,0 +1,19 @@
+#!/bin/bash 
+markdown="$1"
+article_number="$2"
+
+pandoc -f markdown -t html5 -o temp_html $1
+
+find temp_html -type f -exec sed -i "" "s/<code>/<pre><code>/g" {} \;
+find temp_html -type f -exec sed -i "" "s#</code></p>#</code></pre>#g" {} \;
+
+HTML_text=$(<temp_html)
+
+#printf "$HTML_text"
+
+#curl https://signalfx.zendesk.com/api/v2/help_center/articles/$article_number.json \
+#  -d '{"article": {"promoted": false, "position": 0, "comments_disabled": false, "body": "$HTML_text"}}' \
+#  -v -u straten@signalfx.com -X PUT -H "Content-Type: application/json"
+
+rm temp_html
+

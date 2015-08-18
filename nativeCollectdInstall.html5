@@ -5,46 +5,46 @@
 <p><strong><em>Step One: Download &amp; Install collectd</em> </strong></p>
 <p><strong>For Debian-based versions of linux: Debian, Ubuntu, etc</strong></p>
 <p>1. Confirm you are running a Debian-based system:</p>
-<p>which dpkg</p>
+<p><pre><code>which dpkg</code></pre>
 <p><em>*If this command returns something like: ‘/bin/dpkg’ it’s a safe bet you are on a debian based version of linux</em></p>
 <p>2. Update local repository</p>
-<p>sudo apt-get update</p>
+<p><pre><code>sudo apt-get update</code></pre>
 <ol type="1">
-<li>3. Install collectd </li>
+<li>Install collectd </li>
 </ol>
-<p>sudo apt-get install collectd</p>
+<p><pre><code>sudo apt-get install collectd</code></pre>
 <p>4. Check that collectd has installed</p>
-<p>collectd -h</p>
+<p><pre><code>collectd -h</code></pre>
 <p><em>*If you get a message like the following collectd hasn’t installed: -bash: collectd: command not found</em></p>
 <p><strong>For RPM-based Linux distributions: RedHat, CentOS, etc</strong></p>
 <p>1. Confirm you are running a RPM-based system:</p>
-<p>which rpm</p>
+<p><pre><code>which rpm</code></pre>
 <p><em>*If this command returns something like: ‘/bin/rpm’ it’s a safe bet you are on a RPM based version of linux</em></p>
 <p>2. If you are using RedHat/CentOS 7.x you need to enable the epel repository by running:</p>
-<p>sudo yum install epel-release</p>
+<p><pre><code>sudo yum install epel-release</code></pre>
 <p>If you are using an older version of RedHat/CentOS/Fedora that is 6.x or earlier you need to enable the epel (Extra Packages for Enterprise Linux) repository to install collectd. &lt;link to other doc&gt;<br />
 <em>All other versions of RPM-based linux distributions will also need the epel repository enabled before you can install collectd.</em></p>
 <p>2. Update local repository </p>
-<p>sudo yum update</p>
+<p><pre><code>sudo yum update</code></pre>
 <p>3. Install collectd </p>
-<p>sudo yum install collectd</p>
+<p><pre><code>sudo yum install collectd</code></pre>
 <p><em>*If a version of collectd earlier than 5.2 got installed you will <strong>NOT</strong> be able to aggregate CPU metrics. The Aggregation plugin is only supported on 5.2 and later. For the best experience we recommend you use our latest collectd 5.5.x package. Instruction can be found </em><a href="https://support.signalfx.com/hc/en-us/articles/205147119"><em>here</em></a></p>
 <p>4. Install baseline collectd plugins</p>
-<p>sudo yum install collectd-disk collectd-write_http</p>
+<p><pre><code>sudo yum install collectd-disk collectd-write\_http</code></pre>
 <p>5. Check that collectd has installed</p>
-<p>collectd -h</p>
+<p><pre><code>collectd -h</code></pre>
 <p><em>If you get a message like the following collectd hasn’t installed: -bash: collectd: command not found</em></p>
 <p>****Step Two: Configure collectd to send metrics to SignalFx<br />
 ****Now that collectd is installed we need to configure it to collect and send metrics to SignalFx. To automatically configure collectd with a base configuration and to send metrics to SignalFx follow the instructions below. To manually configure collectd please see these instructions</p>
 <p>1. To do this you need to run the following curl command:</p>
-<p>curl -sSL https://dl.signalfx.com/collectd-simple | bash -s -- -t API_TOKEN</p>
+<p><pre><code>curl -sSL https://dl.signalfx.com/collectd-simple | bash -s -- -t API\_TOKEN</code></pre>
 <p><em>*to find your org API Token go to </em><a href="https://app.signalfx.com/#/myprofile"><em>https://app.signalfx.com/#/myprofile</em></a> </p>
 <p>or</p>
-<p>curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --</p>
+<p><pre><code>curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --</code></pre>
 <p>example:</p>
-<p>curl -sSL https://dl.signalfx.com/collectd-simple | bash -s -- -t abc_123_efg</p>
+<p><pre><code>curl -sSL https://dl.signalfx.com/collectd-simple | bash -s -- -t abc\_123\_efg</code></pre>
 <p>or</p>
-<p>curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --</p>
+<p><pre><code>curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --</code></pre>
 <p>2. You will be asked how you want to configure your hostname.<strong> <br />
 </strong>Type 'input' and press enter<br />
 <em>*options 'dns' and 'aws' are not relevant in this tutorial </em></p>

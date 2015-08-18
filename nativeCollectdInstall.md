@@ -21,22 +21,22 @@ visit [collectd's home page](https://collectd.org/). 
 
 1\. Confirm you are running a Debian-based system:
 
-which dpkg
+```which dpkg```
 
 *\*If this command returns something like: ‘/bin/dpkg’ it’s a safe bet
 you are on a debian based version of linux*
 
 2\. Update local repository
 
-sudo apt-get update
+```sudo apt-get update```
 
-1.  3\. Install collectd 
+1. Install collectd 
 
-sudo apt-get install collectd
+```sudo apt-get install collectd```
 
 4\. Check that collectd has installed
 
-collectd -h
+```collectd -h```
 
 *\*If you get a message like the following collectd hasn’t
 installed: -bash: collectd: command not found*
@@ -45,7 +45,7 @@ installed: -bash: collectd: command not found*
 
 1\. Confirm you are running a RPM-based system:
 
-which rpm
+```which rpm```
 
 *\*If this command returns something like: ‘/bin/rpm’ it’s a safe bet
 you are on a RPM based version of linux*
@@ -53,7 +53,7 @@ you are on a RPM based version of linux*
 2\. If you are using RedHat/CentOS 7.x you need to enable the epel
 repository by running:
 
-sudo yum install epel-release
+```sudo yum install epel-release```
 
 If you are using an older version of RedHat/CentOS/Fedora that is 6.x or
 earlier you need to enable the epel (Extra Packages for Enterprise
@@ -63,11 +63,11 @@ epel repository enabled before you can install collectd.*
 
 2\. Update local repository 
 
-sudo yum update
+```sudo yum update```
 
 3\. Install collectd 
 
-sudo yum install collectd
+```sudo yum install collectd```
 
 *\*If a version of collectd earlier than 5.2 got installed you
 will **NOT** be able to aggregate CPU metrics. The Aggregation plugin is
@@ -77,11 +77,11 @@ found *[*here*](https://support.signalfx.com/hc/en-us/articles/205147119)
 
 4\. Install baseline collectd plugins
 
-sudo yum install collectd-disk collectd-write\_http
+```sudo yum install collectd-disk collectd-write\_http```
 
 5\. Check that collectd has installed
 
-collectd -h
+```collectd -h```
 
 *If you get a message like the following collectd hasn’t
 installed: -bash: collectd: command not found*
@@ -95,24 +95,24 @@ instructions
 
 1\. To do this you need to run the following curl command:
 
-curl -sSL https://dl.signalfx.com/collectd-simple | bash -s -- -t
-API\_TOKEN
+```curl -sSL https://dl.signalfx.com/collectd-simple | bash -s -- -t
+API\_TOKEN```
 
 *\*to find your org API Token go
 to *[*https://app.signalfx.com/\#/myprofile*](https://app.signalfx.com/#/myprofile) 
 
 or
 
-curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --
+```curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --```
 
 example:
 
-curl -sSL https://dl.signalfx.com/collectd-simple | bash -s --
--t abc\_123\_efg
+```curl -sSL https://dl.signalfx.com/collectd-simple | bash -s --
+-t abc\_123\_efg```
 
 or
 
-curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --
+```curl -sSL https://dl.signalfx.com/collectd-simple | sudo bash -s --```
 
 2\. You will be asked how you want to configure your hostname.** \
 **Type 'input' and press enter\

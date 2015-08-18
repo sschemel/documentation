@@ -13,9 +13,10 @@ page.
 
 **Which Operating Systems are supported?**
 
-Ubuntu 12.04, 14.04 & 15.04
-RHEL/Centos 5.x, 6.x & 7.x
-Amazon Linux 2014.09 & 2015.03
+     Ubuntu 12.04, 14.04 & 15.04
+     RHEL/Centos 5.x, 6.x & 7.x
+     Amazon Linux 2014.09 & 2015.03
+
 
 **Ubuntu 12.04, 14.04 & 15.04**
 
@@ -146,7 +147,7 @@ Amazon Linux 2014.09 & 2015.03
 
  ```sudo yum install --nogpgcheck SignalFx_Centos_5_RPM_Filename```
 
-Example:
+ Example:
 
  ```sudo yum install --nogpgcheck SignalFx-RPMs-centos-5-release-1.0-0.noarch.rpm```
 
@@ -158,11 +159,11 @@ Example:
 
  ```curl https://s3.amazonaws.com/public-downloads--signalfuse-com/collectd-simple | sudo bash -s -- -t $api_token```
 
-7. You will be asked how you want to configure your hostname. Type 'input' and press enter
+8. You will be asked how you want to configure your hostname. Type 'input' and press enter
 
      *options 'dns' and 'aws' are not applicable to this tutorial
 
-8. Next you will be asked to input the hostname value. Type the 'hostname' and press enter
+9. Next you will be asked to input the hostname value. Type the 'hostname' and press enter
 
-9. You can now view your metrics in SignalFx. We recommend you start with viewing them here under your host page:
+ You can now view your metrics in SignalFx. We recommend you start with viewing them here under your host page:
 <https://app.signalfx.com/#/catalog/?selectedKeyValue=sf_key:host>
